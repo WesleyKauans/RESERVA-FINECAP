@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from reserva.views import index,reserva_cadastrar, reserva_listar, detalhar_reserva, reserva_editar, reserva_remover
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index, name='index'),
+    path('cadastro/', reserva_cadastrar, name='reserva_cadastrar'),
+    path('listar/', reserva_listar,name='reserva_listar', ),
+    path ('detalhar_reserva/<int:id>/', detalhar_reserva, name='reserva_produto'),
+    path('editar/<int:id>/', reserva_editar, name='reserva_editar'),
+    path('remover/<int:id>/', reserva_remover, name="reserva_remover"),
 ]

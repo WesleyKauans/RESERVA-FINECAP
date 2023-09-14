@@ -1,0 +1,46 @@
+
+{% load static %}
+
+{% block center %}
+<br>
+    <h2 class="text-center m-4.+"> Formulário para cadastro das reservas</h2>
+    <hr>
+       
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div class="m-4">
+
+      <div class="mb-3">
+          <label for="nome" class="form-label"><strong>Nome da Empresa</strong></label>
+          {{ form.nome_empresa }}
+      </div>
+      
+      <div class="mb-3">
+          <label for="nome" class="form-label"><strong>CNPJ</strong></label>
+          {{ form.cnpj }}
+      </div>
+
+      <div class="mb-3">
+          <label for="nome" class="form-label"><strong>Categoria da Empresa</strong></label>
+          {{ form.categoria_empresa }}
+      </div>
+      
+
+      <div class="mb-3">
+          <label for="nome" class="form-label"><strong>Quitado</strong></label>
+          {{ form.quitado }}
+      </div>
+
+
+      <button type="submit" class="btn btn-success m-3">Enviar</button>
+  </form>
+  
+  <div class="m-3 text-center">
+    <a href="{% url '' %}" class="btn btn-secondary">Voltar</a>
+    <a href="{% url 'reserva_listar' %}" class="btn btn-secondary">Listar</a>
+  
+  </div>
+  
+
+  {% endblock %}

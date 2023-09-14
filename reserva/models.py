@@ -8,5 +8,5 @@ class reserva (models.Model):
 
 
 class Stand (models.Model):
-    localizao = models.CharField(max_length=300)
+    localizacao = models.CharField(max_length=300)
     valor = models.FloatField()
